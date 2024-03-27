@@ -20,8 +20,8 @@ import { PaintDto } from '../dto/paint.dto';
 export class PaintController {
     constructor(private paintService: PaintService) {}
 
-    // @Roles(Role.Manager)
-    // @UseGuards(JwtAuthGuard, RoleGuard)
+    @Roles(Role.Manager)
+    @UseGuards(JwtAuthGuard, RoleGuard)
     @Put(':id/update')
     async changeStatus(@Param('id') id: number, @Body() body: { paint: PaintDto }): Promise<any> {
         try {
@@ -36,7 +36,7 @@ export class PaintController {
         }
     }
 
-    // @UseGuards(JwtAuthGuard, RoleGuard)
+    @UseGuards(JwtAuthGuard, RoleGuard)
     @Get('getPaints')
     getPaints(@Req() req, @Res() res) {
         try {

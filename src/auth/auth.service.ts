@@ -22,6 +22,7 @@ export class AuthService {
   ];
 
   authenticate(authenticateDto: AuthenticateDto): IAuthenticate {
+    console.log('inside authenticate method');
     const user = this.users.find(
       (u) =>
         u.userName === authenticateDto.userName &&

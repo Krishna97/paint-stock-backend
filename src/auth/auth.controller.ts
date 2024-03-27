@@ -18,11 +18,12 @@ import { Roles } from './roles.decorator';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @Post()
+  @Post('login')
   login(@Res() res, @Body() authenticateDto: AuthenticateDto) {
     try {
+      console.log('inside login controller');
       const response = this.authService.authenticate(authenticateDto);
-      return res.status(HttpStatus.OK).json({ response });
+      return res.json(response);
     } catch (error) {
       return res.status(error.status).json(error.response);
     }
