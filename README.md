@@ -1,3 +1,27 @@
+# Users data & credentials 
+
+userName = John
+password = john
+roles = Viewer
+
+userName = Jane
+password = jane
+roles = Manager, Painter
+
+userName = Chris
+password = chris
+roles = Painter
+
+userName = Tom
+password = tom
+roles = Painter
+
+userName = Adam
+password = adam
+roles = Admin
+
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
