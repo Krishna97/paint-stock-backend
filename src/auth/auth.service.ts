@@ -22,4 +22,14 @@ export class AuthService {
 
     return { token, user };
   }
+
+  logout(req) {
+    req.logout((err) => {
+      if (err) {
+        // Handle error, if any
+        console.error('Error occurred during logout:', err);
+      }
+      // No error occurred, perform any additional cleanup or redirection
+    });
+  }
 }

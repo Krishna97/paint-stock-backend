@@ -7,6 +7,7 @@ import {
   Req,
   Res,
   UseGuards,
+  Request
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthenticateDto } from '../dto/authenticate.dto';
@@ -34,5 +35,11 @@ export class AuthController {
   @Get()
   profile(@Req() req, @Res() res) {
     return res.status(HttpStatus.OK).json(req.user);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Post('logout')
+  async logout(@Request() req) {
+    await this.authService.logout(req);
   }
 }
