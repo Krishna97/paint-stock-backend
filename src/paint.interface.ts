@@ -1,11 +1,9 @@
+/**
+ * Enum defining the possible statuses of a paint.
+ */
+
 export enum Status {
   available = 'available',
   runningLow = 'runningLow',
   outOfStock = 'outOfStock'
 }
-
-type Paint = {
-  id: number;
-  color: string;
-  status: Status;
-};

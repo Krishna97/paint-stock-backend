@@ -1,3 +1,7 @@
+/**
+ * Enum defining the possible roles of a user.
+ */
+
 export enum Role {
   Painter = 'painter',
   Manager = 'manager',

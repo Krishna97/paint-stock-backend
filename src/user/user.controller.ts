@@ -1,3 +1,8 @@
+/**
+ * Controller responsible for handling user-related endpoints.
+ * Contains methods for managing user roles and retrieving user information.
+ */
+
 import { Body, Controller, Get, NotFoundException, Param, Patch, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
 import { Role } from '../user.interface';
@@ -10,12 +15,23 @@ import { RoleGuard } from '../auth/role.guard';
 export class UserController {
     constructor(private readonly userService: UserService) { }
 
+    /**
+     * Endpoint to retrieve all available user roles.
+     * @returns An array of Role objects representing available roles.
+     */
     @UseGuards(JwtAuthGuard, RoleGuard)
     @Get('roles')
     getAllRoles(): Role[] {
         return this.userService.getAllRoles();
     }
 
+    /**
+     * Endpoint to update user roles.
+     * @param userId The ID of the user to update roles.
+     * @param updateUserRolesDto The DTO containing updated user roles.
+     * @returns The updated user object.
+     * @throws NotFoundException if the user with the provided ID is not found.
+     */
     @Roles('admin')
     @UseGuards(JwtAuthGuard, RoleGuard)
     @Patch(':userId/roles')
@@ -27,6 +43,10 @@ export class UserController {
         return updatedUser;
     }
 
+    /**
+     * Endpoint to retrieve all users.
+     * @returns An array of UserDto objects representing all users.
+     */
     @Roles('admin')
     @UseGuards(JwtAuthGuard, RoleGuard)
     @Get()

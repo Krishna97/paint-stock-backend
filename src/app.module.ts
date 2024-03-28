@@ -1,3 +1,8 @@
+/**
+ * Module responsible for configuring and managing application-wide dependencies and services.
+ * Imports AuthModule, UserModule, and PaintModule to organize authentication, user, and paint-related features.
+ */
+
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';

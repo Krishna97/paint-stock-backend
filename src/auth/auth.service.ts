@@ -20,7 +20,6 @@ export class AuthService {
    * @throws NotFoundException if invalid credentials are provided.
    */
   authenticate(authenticateDto: AuthenticateDto): IAuthenticate {
-    console.log('inside authenticate method');
     const user = users.find(
       (u) =>
         u.userName === authenticateDto.userName &&

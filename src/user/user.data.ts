@@ -1,4 +1,6 @@
-// users.data.ts
+/**
+ * Contains mock user data for testing purposes.
+ */
 
 import { Role } from '../user.interface';
 

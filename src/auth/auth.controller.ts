@@ -34,7 +34,6 @@ export class AuthController {
   @Post('login')
   login(@Res() res, @Body() authenticateDto: AuthenticateDto) {
     try {
-      console.log('inside login controller');
       const response = this.authService.authenticate(authenticateDto);
       return res.json(response);
     } catch (error) {

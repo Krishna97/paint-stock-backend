@@ -46,8 +46,6 @@ export class PaintService {
    */
   changeStatus(paint): PaintDto {
     const paintIndex = this.paints.findIndex(p => p.id === paint.id);
-    console.log("inside changeStatus service");
-    console.log("paint index need to be updated ", paintIndex);
     // Check if paint index is valid
     if (paintIndex === -1) {
       throw new NotFoundException('Invalid paint');
@@ -55,7 +53,6 @@ export class PaintService {
 
     // Update the status of the paint
     this.paints[paintIndex].status = paint.status;
-    console.log('paints after update: ', this.paints)
     return this.paints[paintIndex];
   }
 
@@ -64,7 +61,6 @@ export class PaintService {
    * @returns An array of paint objects.
    */
   getPaints(): PaintDto[] {
-    console.log('get paints: ', this.paints)
     return this.paints;
   }
 

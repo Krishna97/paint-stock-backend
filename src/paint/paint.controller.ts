@@ -38,8 +38,6 @@ export class PaintController {
         try {
 
             const paint = body;
-            console.log("Inside changeStatus: body", body);
-            console.log("Inside changeStatus: paint", body.paint);
             const response = await this.paintService.changeStatus(paint);
             return response;
         } catch (error) {
@@ -55,7 +53,6 @@ export class PaintController {
     @Get('getPaints')
     getPaints(@Req() req, @Res() res) {
         try {
-            console.log("Inside Getpaints")
             const response = this.paintService.getPaints();
             return res.status(HttpStatus.OK).json({ response });
         } catch (error) {
