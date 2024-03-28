@@ -1,3 +1,8 @@
+/**
+ * Data transfer object (DTO) class for authentication.
+ * Uses class-validator to define validation rules.
+ */
+
 import { IsNotEmpty, IsString } from 'class-validator';
 
 export class AuthenticateDto {

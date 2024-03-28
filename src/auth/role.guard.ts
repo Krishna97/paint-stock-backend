@@ -1,9 +1,14 @@
+/**
+ * JWT authentication guard.
+ * Extends AuthGuard from '@nestjs/passport'.
+ * Used for protecting routes with JWT authentication.
+ */
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 
 @Injectable()
 export class RoleGuard implements CanActivate {
-  constructor(private reflector: Reflector) {}
+  constructor(private reflector: Reflector) { }
 
   matchRoles(roles: string[], userRoles: string[]) {
     return userRoles.some(role => roles.includes(role));

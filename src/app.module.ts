@@ -21,4 +21,4 @@ import { PaintModule } from './paint/paint.module';
   controllers: [AppController, AuthController],
   providers: [AppService, AuthService, JwtStrategy],
 })
-export class AppModule {}
+export class AppModule { }

@@ -9,8 +9,3 @@ type Paint = {
   color: string;
   status: Status;
 };
-
-// export interface IAuthenticate {
-//   readonly user: User;
-//   readonly token: string;
-// }

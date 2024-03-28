@@ -8,9 +8,9 @@ import { RoleGuard } from '../auth/role.guard';
 
 @Controller('user')
 export class UserController {
-    constructor(private readonly userService: UserService) {}
-  
-    @UseGuards(JwtAuthGuard, RoleGuard)  
+    constructor(private readonly userService: UserService) { }
+
+    @UseGuards(JwtAuthGuard, RoleGuard)
     @Get('roles')
     getAllRoles(): Role[] {
         return this.userService.getAllRoles();
@@ -22,7 +22,7 @@ export class UserController {
     updateUserRoles(@Param('userId') userId: number, @Body() updateUserRolesDto: UpdateUserRolesDto): UserDto {
         const updatedUser = this.userService.updateUserRoles(userId, updateUserRolesDto.roles);
         if (!updatedUser) {
-        throw new NotFoundException('User not found');
+            throw new NotFoundException('User not found');
         }
         return updatedUser;
     }

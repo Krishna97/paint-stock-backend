@@ -1,3 +1,8 @@
+/**
+ * Controller for handling authentication-related HTTP requests.
+ * Exposes endpoints for user authentication, profile retrieval, and logout.
+ */
+
 import {
   Body,
   Controller,
@@ -17,8 +22,15 @@ import { Roles } from './roles.decorator';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(private readonly authService: AuthService) { }
 
+  /**
+   * Endpoint for user login.
+   * Authenticates the user based on the provided credentials.
+   * @param res Response object to send HTTP response
+   * @param authenticateDto DTO containing user credentials
+   * @returns Response with authentication token and user information
+   */
   @Post('login')
   login(@Res() res, @Body() authenticateDto: AuthenticateDto) {
     try {
@@ -30,6 +42,13 @@ export class AuthController {
     }
   }
 
+   /**
+   * Endpoint to retrieve user profile.
+   * Requires authentication and the 'customer' role.
+   * @param req Request object containing user information from JWT
+   * @param res Response object to send HTTP response
+   * @returns Response with user profile information
+   */
   @Roles('customer')
   @UseGuards(JwtAuthGuard, RoleGuard)
   @Get()
@@ -37,6 +56,11 @@ export class AuthController {
     return res.status(HttpStatus.OK).json(req.user);
   }
 
+  /**
+   * Endpoint for user logout.
+   * Requires authentication with a valid JWT token.
+   * @param req Request object containing user information
+   */
   @UseGuards(JwtAuthGuard)
   @Post('logout')
   async logout(@Request() req) {

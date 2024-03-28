@@ -1,3 +1,8 @@
+/**
+ * Data transfer object (DTO) class for creating or updating a user.
+ * Uses class-validator to define validation rules.
+ */
+
 import { IsNotEmpty, IsString } from 'class-validator';
 import { Role } from '../user.interface';
 
