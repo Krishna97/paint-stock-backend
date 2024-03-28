@@ -21,6 +21,35 @@ password = adam
 roles = Admin
 
 
+# Users data & credentials 
+
+userName = John<br />
+password = john<br />
+roles = Viewer<br /><br />
+
+userName = Jane<br />
+password = jane<br />
+roles = Manager, Painter<br /><br />
+
+userName = Chris<br />
+password = chris<br />
+roles = Painter<br /><br />
+
+userName = Tom<br />
+password = tom<br />
+roles = Painter<br /><br />
+
+userName = Adam<br />
+password = adam<br />
+roles = Admin<br /><br />
+
+
+# UI Navigation Information
+
+Colors of paint can be moved into swimlanes by drag and drop any Color from one lane to another lane.<br />
+Please use Manage Roles button when logged in as an admin to manage users' roles.<br />
+Default setup for colors are: Blue, Grey are available; Black, White are running low; Purple is out of stock.
+
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>

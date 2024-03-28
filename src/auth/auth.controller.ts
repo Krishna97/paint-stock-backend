@@ -41,20 +41,6 @@ export class AuthController {
     }
   }
 
-   /**
-   * Endpoint to retrieve user profile.
-   * Requires authentication and the 'customer' role.
-   * @param req Request object containing user information from JWT
-   * @param res Response object to send HTTP response
-   * @returns Response with user profile information
-   */
-  @Roles('customer')
-  @UseGuards(JwtAuthGuard, RoleGuard)
-  @Get()
-  profile(@Req() req, @Res() res) {
-    return res.status(HttpStatus.OK).json(req.user);
-  }
-
   /**
    * Endpoint for user logout.
    * Requires authentication with a valid JWT token.
