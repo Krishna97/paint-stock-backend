@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsString } from 'class-validator';
-import { Status } from '../interfaces/paint.interface';
+import { Status } from '../paint.interface';
 
 export class PaintDto {
   @IsNotEmpty()

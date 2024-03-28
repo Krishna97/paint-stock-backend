@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { AuthService } from '../auth.service';
-import { Role } from '../interfaces/user.interface';
+import { AuthService } from '../auth/auth.service';
+import { Role } from '../user.interface';
 import { UserDto } from '../dto/user.dto';
 import { users } from './user.data';
 

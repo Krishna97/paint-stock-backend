@@ -1,16 +1,15 @@
 import { Body, Controller, Get, NotFoundException, Param, Patch, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
-import { Role } from '../interfaces/user.interface';
+import { Role } from '../user.interface';
 import { UpdateUserRolesDto, UserDto } from '../dto/user.dto';
-import { Roles } from '../roles.decorator';
-import { JwtAuthGuard } from '../jwt-auth.guard';
-import { RoleGuard } from '../role.guard';
+import { Roles } from '../auth/roles.decorator';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { RoleGuard } from '../auth/role.guard';
 
 @Controller('user')
 export class UserController {
     constructor(private readonly userService: UserService) {}
   
-    @Roles('admin')
     @UseGuards(JwtAuthGuard, RoleGuard)  
     @Get('roles')
     getAllRoles(): Role[] {

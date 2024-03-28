@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { faker } from '@faker-js/faker';
 import { sign } from 'jsonwebtoken';
-import { Status } from '../interfaces/paint.interface';
+import { Status } from '../paint.interface';
 import { PaintDto } from '../dto/paint.dto';
 
 @Injectable()

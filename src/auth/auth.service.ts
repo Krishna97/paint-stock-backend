@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { faker } from '@faker-js/faker';
 import { sign } from 'jsonwebtoken';
-import { AuthenticateDto } from './dto/authenticate.dto';
-import { IAuthenticate, Role } from './interfaces/user.interface';
-import { users } from './user/user.data';
+import { AuthenticateDto } from '../dto/authenticate.dto';
+import { IAuthenticate, Role } from '../user.interface';
+import { users } from '../user/user.data';
 
 @Injectable()
 export class AuthService {

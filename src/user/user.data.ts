@@ -1,7 +1,7 @@
 // users.data.ts
 
 import { faker } from '@faker-js/faker';
-import { Role } from '../interfaces/user.interface';
+import { Role } from '../user.interface';
 
 export let users = [
     {

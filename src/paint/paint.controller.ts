@@ -9,18 +9,18 @@ import { Body,
     Res,
     UseGuards, } from '@nestjs/common';
 import { PaintService } from './paint.service';
-import { Status } from '../interfaces/paint.interface';
-import { Roles } from '../roles.decorator';
-import { JwtAuthGuard } from '../jwt-auth.guard';
-import { RoleGuard } from '../role.guard';
-import { Role } from '../interfaces/user.interface';
+import { Status } from '../paint.interface';
+import { Roles } from '../auth/roles.decorator';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { RoleGuard } from '../auth/role.guard';
+import { Role } from '../user.interface';
 import { PaintDto } from '../dto/paint.dto';
 
 @Controller('paint')
 export class PaintController {
     constructor(private paintService: PaintService) {}
 
-    @Roles(Role.Manager)
+    @Roles(Role.Manager, Role.Painter)
     @UseGuards(JwtAuthGuard, RoleGuard)
     @Put(':id/update')
     async changeStatus(@Param('id') id: number, @Body() body: { paint: PaintDto }): Promise<any> {
