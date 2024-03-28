@@ -1,28 +1,5 @@
 # Users data & credentials 
 
-userName = John
-password = john
-roles = Viewer
-
-userName = Jane
-password = jane
-roles = Manager, Painter
-
-userName = Chris
-password = chris
-roles = Painter
-
-userName = Tom
-password = tom
-roles = Painter
-
-userName = Adam
-password = adam
-roles = Admin
-
-
-# Users data & credentials 
-
 userName = John<br />
 password = john<br />
 roles = Viewer<br /><br />
@@ -44,11 +21,18 @@ password = adam<br />
 roles = Admin<br /><br />
 
 
-# UI Navigation Information
+# UI Navigation Information and assumptions
 
 Colors of paint can be moved into swimlanes by drag and drop any Color from one lane to another lane.<br />
 Please use Manage Roles button when logged in as an admin to manage users' roles.<br />
-Default setup for colors are: Blue, Grey are available; Black, White are running low; Purple is out of stock.
+Default setup for colors are: Blue, Grey are available; Black, White are running low; Purple is out of stock.<br />
+Default set up for roles of users:<br />
+Manager can view and update paint stock.<br />
+Painter can view and update paint stock.<br />
+Viewr can view paint stock.<br />
+Admin can view paint stock along with managing roles of users.<br />
+
+
 
 
 <p align="center">
