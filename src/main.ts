@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, new ExpressAdapter(server));
   app.enableCors({
     allowedHeaders: ['content-type'],
-    origin: 'https://paint-stock-frontend-git-master-krishna97s-projects.vercel.app/',
+    origin: 'https://paint-stock-frontend.vercel.app/',
     credentials: true,
   });
   await app.listen(process.env.PORT || 3000);
