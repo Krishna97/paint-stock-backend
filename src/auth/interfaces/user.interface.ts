@@ -6,10 +6,10 @@ export enum Role {
 }
 
 type User = {
-  id: string;
+  id: number;
   userName: string;
   password: string;
-  role: Role;
+  roles: Role[];
 };
 
 export interface IAuthenticate {

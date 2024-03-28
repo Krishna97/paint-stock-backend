@@ -1,10 +1,10 @@
 import { IsNotEmpty, IsString } from 'class-validator';
 import { Role } from '../interfaces/user.interface';
 
-export class ProfileDto {
+export class UserDto {
   @IsNotEmpty()
   @IsString()
-  readonly id: string;
+  readonly id: number;
 
   @IsNotEmpty()
   @IsString()
@@ -16,5 +16,9 @@ export class ProfileDto {
 
   @IsNotEmpty()
   @IsString()
-  readonly role: Role;
+  readonly roles: Role[];
+}
+
+export class UpdateUserRolesDto {
+  roles: Role[];
 }
