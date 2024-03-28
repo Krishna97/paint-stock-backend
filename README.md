@@ -33,6 +33,9 @@ Viewr can view paint stock.<br />
 Admin can view paint stock along with managing roles of users.<br />
 
 
+# Live deployment URL with CI/CD
+
+ https://backend-onlymyslef.koyeb.app/
 
 
 <p align="center">
